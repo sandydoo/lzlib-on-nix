@@ -1,7 +1,7 @@
 let
   pkgs = import <nixpkgs> {};
 
-  inherit (pkgs) stdenv fetchurl;
+  inherit (pkgs) stdenv lib fetchurl;
 
   lzlib = stdenv.mkDerivation rec {
     pname = "lzlib";
@@ -21,7 +21,7 @@ let
 
     enableParallelBuilding = true;
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://www.nongnu.org/lzip/lzlib.html";
       description = "Lzlib is a data compression library providing in-memory LZMA compression and decompression functions, including integrity checking of the decompressed data.";
       license = licenses.gpl3Plus;
@@ -44,12 +44,12 @@ let
       "CPPFLAGS=-DNDEBUG"
       "CFLAGS=-O3"
       "CXXFLAGS=-O3"
-    ] ++ stdenv.lib.optional (stdenv.hostPlatform != stdenv.buildPlatform)
+    ] ++ lib.optional (stdenv.hostPlatform != stdenv.buildPlatform)
       "CXX=${stdenv.cc.targetPrefix}c++";
 
     enableParallelBuilding = true;
 
-    meta = with stdenv.lib; {
+    meta = with lib; {
       homepage = "https://www.nongnu.org/lzip/plzip.html";
       description = "Plzip is a massively parallel (multi-threaded) implementation of lzip, fully compatible with lzip 1.4 or newer. Plzip uses the lzlib compression library.";
       license = licenses.gpl3Plus;
