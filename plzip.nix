@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     homepage = "https://www.nongnu.org/lzip/plzip.html";
-    description = "Plzip is a massively parallel (multi-threaded) implementation of lzip, fully compatible with lzip 1.4 or newer. Plzip uses the lzlib compression library.";
+    description = "A massively parallel (multi-threaded) implementation of lzip";
     license = licenses.gpl3Plus;
     platforms = platforms.all;
   };

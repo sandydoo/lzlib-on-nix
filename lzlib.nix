@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     homepage = "https://www.nongnu.org/lzip/lzlib.html";
-    description = "Lzlib is a data compression library providing in-memory LZMA compression and decompression functions, including integrity checking of the decompressed data.";
+    description = "A data compression library providing in-memory LZMA compression and decompression functions, including integrity checking of the decompressed data";
     license = licenses.gpl3Plus;
     platforms = platforms.all;
   };
