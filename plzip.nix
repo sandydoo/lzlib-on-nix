@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "plzip";
-  version = "1.8";
+  version = "1.9";
 
   src = fetchurl {
     url = "mirror://savannah/lzip/plzip/${pname}-${version}.tar.gz";
-    sha256 = "04indil809qgfmz776imb3dnhkysh7zk28jcv3mw0ahl2lyaxbzd";
+    sha256 = "19zinpx7hssl6r3vilpvq2s7wha3545xan8b0vcvsxnyipdx3n0l";
   };
 
   buildInputs = [ lzlib ];
