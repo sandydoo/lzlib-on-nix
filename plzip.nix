@@ -11,6 +11,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ lzlib ];
 
+  doCheck = true;
   enableParallelBuilding = true;
 
   meta = with lib; {
