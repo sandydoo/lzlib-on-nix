@@ -11,6 +11,13 @@ stdenv.mkDerivation rec {
 
   buildInputs = [ lzlib ];
 
+  configureFlags = [
+    "CPPFLAGS=-DNDEBUG"
+    "CFLAGS=-O3"
+    "CXXFLAGS=-O3"
+  ] ++ lib.optional (stdenv.hostPlatform != stdenv.buildPlatform)
+    "CXX=${stdenv.cc.targetPrefix}c++";
+
   doCheck = true;
   enableParallelBuilding = true;
 
