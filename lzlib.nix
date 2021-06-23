@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation rec {
   pname = "lzlib";
-  version = "1.11";
+  version = "1.12";
 
   src = fetchurl {
     url = "mirror://savannah/lzip/lzlib/${pname}-${version}.tar.gz";
-    sha256 = "6c5c5f8759d1ab7c4c3c53788ea2d9daad04aeddcf338226893f8ff134914d36";
+    sha256 = "1c9pwd6by8is4z8bs6j306jyy6pgm2dvsn4fr7fg2b5m5qj88pcf";
   };
 
   enableParallelBuilding = true;
